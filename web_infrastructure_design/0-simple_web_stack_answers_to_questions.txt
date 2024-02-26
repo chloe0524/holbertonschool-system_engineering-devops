@@ -1,0 +1,106 @@
+## Specificity about this infrastructure;
+
+# What is a server?
+
+A server is a powerful piece of computer hardware or software designed to compute, store, and manage data, devices, and systems over a network, providing functionality for other programs or devices, known as "clients," and acting as a central source from which other computers access information.
+
+# What is the role of the domain name?
+
+Domain names serve as text-based labels that identify Internet resources, such as computers, networks, and services, making them easier to memorize than the numerical addresses used in Internet protocols. They are utilized by the Domain Name System (DNS) to identify and map to websites and other Internet Protocol (IP) resources, providing an intuitive means to recognize and remember Internet resources. The DNS system associates human-readable domain names with unique server identifiers known as IP addresses, facilitating internet communication. DNS records, such as A, AAAA, CNAME, and TXT records, are used to map domain names to their respective IP addresses, ensuring seamless internet connectivity.
+
+# What type of DNS record www is in www.foobar.com?
+
+The "www" in www.foobar.com typically corresponds to a CNAME (Canonical Name) DNS record-type; While "www" was once considered essential, it's now a non-essential subdomain. Modern DNS configurations allow websites to function just as well with or without it. Users can access sites using domain names with or without "www" thanks to to DNS adjustments.This is because DNS can be set up to handle both variations, redirecting users to the same location. 
+
+# What is the role of the web server?
+
+A web server is a computer system that uses HTTP and other protocols to respond to client requests over the internet. Its main job is to store, process, and deliver web content to users via web browsers. It communicates with browsers using HTTP, stores website data securely, and handles requests by delivering the requested information or web pages. Additionally, web servers regulate network traffic, facilitate server-side web scripting, and provide virtual hosting capabilities.
+Works cited: 
+
+# What is the role of the application server?
+
+An application server is a server that enhances a web server's capabilities by handling dynamic content generation, application logic, and integration with other resources. It sits behind web servers and processes requests from browsers, applying business logic, and returning HTML responses. Its tasks include user authentication, serving HTML files, and compiling JSP files. Application servers may feature clustering, fail-over, and load-balancing to ensure reliability and scalability, allowing developers to focus on business logic.
+
+
+# What is the role of the database
+
+A database is an organized collection of data stored in a computer system, managed by a database management system (DBMS). It uses tables to structure data for efficient querying and processing with SQL. Databases are essential for various daily activities like banking, transportation, and retail, storing and managing large amounts of structured data.
+
+Their primary purpose is to store, retrieve, and update information related to business operations, ranging from very large to small databases. They can be stored on various media and are managed by DBMS to ensure data integrity, organizing and classifying data for efficient management and access.
+
+
+# What is the server using to communicate with the computer of the user requesting the website
+
+Web browsers communicate with web servers using HTTP (Hypertext Transfer Protocol). When users interact with web pages, the browser sends HTTP requests to the server. HTTP structures these requests and responses over the internet, facilitating data transfer between devices. TCP (Transmission Control Protocol) manages the channels between the browser and server, ensuring effective communication.
+
+##  Issues with this infrastructure;
+
+# SPOF
+
+A Single Point of Failure (SPOF) refers to a component within a system that, if it fails, can render the entire system non-operational. SPOFs represent a significant weakness or threat, as their failure can lead to system-wide downtime or failure.
+
+# Downtime when maintenance needed (like deploying new code web server needs to be restarted)
+
+Planned downtime refers to scheduled periods during which production equipment is intentionally limited or halted to facilitate maintenance, repairs, upgrades, or testing.
+
+# Cannot scale if too much incoming traffic
+
+Scaling a website involves adding resources to handle increased traffic. Challenges include optimizing assets, managing dependencies, and ensuring efficient database and session handling. Additionally, issues like inadequate resource measurement and lack of centralized logging can hinder scalability, leading to performance degradation and downtime during peak traffic, impacting user experience and revenue.
+
+
+Sources;
+
+- What is a server?
+
+https://en.wikipedia.org/wiki/Server_(computing)#Hardware_requirement
+https://www.spiceworks.com/tech/tech-general/articles/what-is-a-server/
+https://www.techtarget.com/whatis/definition/server
+https://dictionary.cambridge.org/fr/dictionnaire/anglais/server
+
+- What is the role of the domain name?
+
+https://en.wikipedia.org/wiki/Domain_name#:~:text=15%20External%20links-,Purpose,such%20resources%20or%20individual%20instances.
+https://www.domaintools.com/support/what-is-a-domain-name-and-what-does-it-do/
+https://www.careerride.com/view/what-are-the-main-function-of-domain-names-3002.aspx
+
+- What type of DNS record www is in www.foobar.com
+https://makori-mildred.medium.com/web-infrastructure-design-3aeefc7727d2#:~:text=www%20is%20a%20CNAME%20(Canonical,A%20record%20of%20foobar.com%20.
+https://wpengine.com/resources/http-vs-www-urls-for-seo/#:~:text=Do%20You%20Need%20WWW%20in,or%20news%20server%20(news).
+https://ns1.com/resources/dns-records-explained#:~:text=DNS%20(Domain%20Name%20System)%20records,webserver's%20IP%20address%20like%20104.131.
+
+- What is the role of the web server?
+
+https://www.solarwinds.com/resources/it-glossary/web-server
+https://www.techtarget.com/whatis/definition/Web-server#:~:text=A%20web%20server%20is%20software,and%20delivering%20webpages%20to%20users.
+https://10web.io/glossary/web-server/
+
+- What is the role of the application server?
+
+https://aws.amazon.com/compare/the-difference-between-web-server-and-application-server/?nc1=h_ls
+https://en.wikipedia.org/wiki/Application_server
+https://www.ibm.com/docs/en/db2/9.7?topic=processing-role-application-server
+
+- What is the role of the database
+
+https://www.linkedin.com/pulse/role-database-web-application-development-dsxcf/
+https://blog.ze.com/the-zema-solution/the-role-of-database-management-system-in-information-systems/
+https://www.geeksforgeeks.org/what-is-database/?ref=header_search
+
+- What is the server using to communicate with the computer of the user requesting the website
+
+https://developer.mozilla.org/en-US/docs/Learn/Server-side/First_steps/Client-Server_overview
+https://www.codecademy.com/article/http-requests
+
+- SPOF
+
+https://avinetworks.com/glossary/single-point-of-failure/
+https://en.wikipedia.org/wiki/Single_point_of_failure
+
+- Downtime when maintenance needed (like deploying new code web server needs to be restarted)
+
+https://www.beekeeper.io/blog/downtime/#:~:text=The%20Business%20Dictionary%20describes%20the,materials%2C%20labor%2C%20power.%E2%80%9D
+
+- Cannot scale if too much incoming traffic
+
+https://scalingo.com/blog/12-reasons-why-your-app-wont-scale
+https://www.redswitches.com/blog/website-scaling/
