@@ -1,0 +1,71 @@
+## Specificity about this infrastructure;
+
+# For every additional element, why you are adding it
+
+# What distribution algorithm your load balancer is configured with and how it works
+
+# Is your load-balancer enabling an Active-Active or Active-Passive setup, explain the difference between both
+
+
+Active-Active vs. Active-Passive High Availability Clusters:
+
+**Active-Active**
+
++ Pros: High scalability, parallel processing, near zero downtime.
++ Cons: Complex, high cost, requires robust data consistency.
+
+**Active-Passive**
+
++ Pros: Simple, cost-effective, suitable for lower loads.
++ Cons: Single point of failure (passive node), slower failover, downtime during failover.
+Choose:
+
+- Near zero downtime: Active-Active.
+- Cost-effective: Active-Passive.
+- High scalability: Active-Active.
+- Non-critical services: Active-Passive.
+
+# How a database Primary-Replica (Master-Slave) cluster works
+
+
+Master-slave replication in distributed databases involves a primary/master server for read and write operations, with secondary/slave servers replicating data. This setup alleviates read workload from the primary, aiding performance and resilience. Traditionally physical, it's adaptable to cloud environments. Updates from the master are logged and transmitted to slaves, confirming receipt for subsequent updates, with options for synchronous or asynchronous replication.
+
+
+# What is the difference between the Primary node and the Replica node in regard to the application
+
+The primary node is responsible for handling both read and write operations, ensuring data consistency and integrity as the authoritative source of truth within the application.
+Replica nodes maintain copies of the data from the primary node, providing redundancy to improve fault tolerance and potentially scale read operations, but they typically do not handle write operations directly.
+
+
+##  Issues with this infrastructure;
+
+
+# Where are SPOF
+
+
+# Security issues (no firewall, no HTTPS)
+
+
+# No monitoring
+
+
+
+
+Sources;
+
+- Is your load-balancer enabling an Active-Active or Active-Passive setup, explain the difference between both
+
+https://blog.purestorage.com/purely-informational/active-active-vs-active-passive-decoding-high-availability-configurations-for-massive-data-networks/#:~:text=Active%2Dactive%20involves%20all%20nodes,standby%20nodes%20ready%20for%20failover.
+https://www.youtube.com/watch?v=MDuCFh1XuZU
+
+
+- How a database Primary-Replica (Master-Slave) cluster works
+
+https://www.enjoyalgorithms.com/blog/master-slave-replication-databases
+https://mariadb.com/resources/blog/database-master-slave-replication-in-the-cloud/
+
+
+-What is the difference between the Primary node and the Replica node in regard to the application
+
+https://www.oreilly.com/library/view/system-design-on/9781098146887/ch01.html
+https://www.mongodb.com/basics/clusters/mongodb-cluster-setup
