@@ -49,8 +49,6 @@ Replica nodes maintain copies of the data from the primary node, providing redun
 # No monitoring
 
 
-
-
 Sources;
 
 - Is your load-balancer enabling an Active-Active or Active-Passive setup, explain the difference between both
