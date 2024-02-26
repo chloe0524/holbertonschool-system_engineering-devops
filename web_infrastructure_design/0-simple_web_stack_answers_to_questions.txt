@@ -1,7 +1,7 @@
 # Infrastructure Specifics
 
 ## Server
-A server, which can be either a powerful computer hardware or software, provides functionality for other programs or devices, known as "clients". It manages data, devices, and systems over a network. A server, like any computer, operates on an underlying operating system that manages its software and hardware resources.
+A server, which can be either a powerful computer hardware or software, provides functionality for other programs or devices, known as "clients". This includes serving static content like HTML pages, images, and stylesheets. It manages data, devices, and systems over a network. A server, like any computer, operates on an underlying operating system that manages its software and hardware resources.
 
 ## Domain Name
 Domain names are text-based labels that identify Internet resources. They are used by the Domain Name System (DNS) to map to websites and other Internet Protocol (IP) resources.
@@ -24,10 +24,10 @@ Web servers communicate with web browsers using HTTP (Hypertext Transfer Protoco
 # Infrastructure Issues
 
 ## Single Point of Failure (SPOF)
-A SPOF is a component within a system that, if it fails, can render the entire system non-operational.
+A SPOF is a component within a system that, if it fails, can render the entire system non-operational. In our current infrastructure, the server is a single point of failure because nothing is redundant.
 
 ## Downtime for Maintenance
-Planned downtime refers to scheduled periods during which production equipment is intentionally limited or halted for maintenance, repairs, upgrades, or testing.
+Planned downtime refers to scheduled periods during which production equipment is intentionally limited or halted for maintenance, repairs, upgrades, or testing. The website may experience temporary downtime when new code is deployed and the web server needs to be restarted.
 
 ## Scalability Issues
 Scaling a website involves adding resources to handle increased traffic. Challenges include optimizing assets, managing dependencies, and ensuring efficient database and session handling.
