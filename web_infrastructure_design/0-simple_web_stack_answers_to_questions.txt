@@ -42,7 +42,6 @@ https://dictionary.cambridge.org/fr/dictionnaire/anglais/server
 
 https://en.wikipedia.org/wiki/Domain_name#:~:text=15%20External%20links-,Purpose,such%20resources%20or%20individual%20instances.
 
-
 - What type of DNS record www is in www.foobar.com
 https://makori-mildred.medium.com/web-infrastructure-design-3aeefc7727d2#:~:text=www%20is%20a%20CNAME%20(Canonical,A%20record%20of%20foobar.com%20.
 https://wpengine.com/resources/http-vs-www-urls-for-seo/#:~:text=Do%20You%20Need%20WWW%20in,or%20news%20server%20(news).
@@ -61,7 +60,6 @@ https://aws.amazon.com/compare/the-difference-between-web-server-and-application
 
 - What is the role of the database
 
-
 https://blog.ze.com/the-zema-solution/the-role-of-database-management-system-in-information-systems/
 https://www.geeksforgeeks.org/what-is-database/?ref=header_search
 
@@ -70,7 +68,6 @@ https://www.geeksforgeeks.org/what-is-database/?ref=header_search
 https://www.codecademy.com/article/http-requests
 
 - SPOF
-
 
 https://en.wikipedia.org/wiki/Single_point_of_failure
 
