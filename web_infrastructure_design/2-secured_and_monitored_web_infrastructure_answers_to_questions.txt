@@ -1,0 +1,74 @@
+## Specificity about this infrastructure;
+
+# What are firewalls for
+
+A firewall is a network security device that monitors incoming and outgoing traffic, enforcing predefined security rules to protect against unauthorized access and cyber threats. It acts as a barrier between internal networks and external sources, such as the internet, ensuring only permitted traffic is allowed while blocking malicious activity.
+
+# Why is the traffic served over HTTPS
+
+HTTPS utilizes the SSL/TLS protocol to encrypt communications, preventing attackers from stealing data. Additionally, SSL/TLS verifies the authenticity of a website's server, thus preventing impersonations. This security measure parallels food safety practices, which prevent illnesses, and effectively thwarts various cyberattacks.
+
+# What monitoring is used for
+
+Monitoring refers to the systematic and ongoing collection of information from projects and programs for several purposes: learning from experiences to enhance future practices, ensuring internal and external accountability of resources and outcomes, making informed decisions, and empowering beneficiaries. It begins in the planning stage and involves tracking progress against predefined benchmarks, assessing resource allocation and utilization, evaluating progress towards goals and objectives, and adhering to schedules.
+
+# How the monitoring tool is collecting data
+
+Data collection is about gathering information from diverse sources to assess project or program success. Methods include qualitative (e.g., surveys, interviews) and quantitative (e.g., surveys, questionnaires) approaches, facilitating measurement of progress and identification of improvement areas. It enables tracking progress and comparing results with goals.
+
+# Explain what to do if you want to monitor your web server QPS
+
+
+
+##  Issues with this infrastructure;
+
+# Why terminating SSL at the load balancer level is an issue
+
+SSL termination at the load balancer presents a security concern as it involves transmitting unencrypted data from the load balancer to the App Server, potentially leaving applications vulnerable to Man-in-the-Middle Attacks. While terminating SSL at the load balancer simplifies management and allows for centralized correction of SSL vulnerabilities, it raises trust issues regarding data security within the datacenter. Additionally, in scenarios involving third-party load balancers or CDNs, where traffic traverses untrusted networks, re-encrypting data or establishing secure VPN connections may be necessary to mitigate security risks.
+
+# Why having only one MySQL server capable of accepting writes is an issue
+
+A single write server in MySQL creates a bottleneck, is a single point of failure, and hinders maintenance. Utilizing multiple write servers through replication methods like master-master or group replication addresses these concerns by providing better scaling, automatic failover, and ensuring data consistency.
+
+# Why having servers with all the same components (database, web server and application server) might be a problem
+
+Having servers with all the same components, including the database, web server, and application server, can present several challenges. Firstly, it can impact cache performance as both the web server/app code and SQL Server would compete for memory resources, potentially leading to degraded performance. Additionally, sharing server resources such as disk usage, memory, and CPU between the web site and database can result in slower operation compared to if they were separated. While hosting them on the same server may suffice for low-traffic sites, it's preferable to separate them to allow for independent scaling and optimize performance.
+
+
+Sources;
+
+- What are firewalls for
+
+https://www.forcepoint.com/cyber-edu/firewall
+https://www.checkpoint.com/cyber-hub/network-security/what-is-firewall/
+
+- Why is the traffic served over HTTPS
+
+https://www.cloudflare.com/fr-fr/learning/ssl/why-use-https/
+
+- What monitoring is used for
+
+https://www.evalcommunity.com/career-center/what-is-monitoring/#:~:text=Monitoring%20is%20the%20process%20of,any%20deviations%20from%20expected%20outcomes.
+https://www.sportanddev.org/research-learning/guiding-toolkits/monitoring-and-evaluation-me/what-monitoring-and
+
+- How the monitoring tool is collecting data
+
+https://www.sportanddev.org/research-learning/guiding-toolkits/monitoring-and-evaluation-me/what-monitoring-and
+
+- Explain what to do if you want to monitor your web server QPS
+
+- Why terminating SSL at the load balancer level is an issue
+
+https://arxiv.org/pdf/2011.09621#:~:text=However%2C%20such%20practice%20implies%20that,)%20(Boisrond%2C%202014)
+https://security.stackexchange.com/questions/30403/should-ssl-be-terminated-at-a-load-balancer
+
+- Why having only one MySQL server capable of accepting writes is an issue
+
+https://dzone.com/articles/pros-and-cons-of-mysql-replication-types
+https://hidora.io/en/ressources/avantages-et-inconvenients-des-types-de-replication-mysql-et-comment-les-executer-dans-la-cloud/
+
+- Why having servers with all the same components (database, web server and application server) might be a problem
+
+https://www.ge.com/digital/documentation/workflow/t_wf_configure_multiple_servers_on_a_single_machine_2.html#:~:text=You%20can%20configure%20multiple%20servers,memory%20usage%20on%20the%20SOAServer.
+https://www.digitalocean.com/community/questions/when-do-you-move-your-database-to-a-separate-server
+https://stackoverflow.com/questions/659970/why-is-it-not-advisable-to-have-the-database-and-web-server-on-the-same-machine#:~:text=Both%20the%20web%20server%2Fapp,in%20the%20same%20memory%20space.&text=Security%20is%20a%20major%20concern.
