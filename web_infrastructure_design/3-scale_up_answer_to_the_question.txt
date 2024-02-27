@@ -1,3 +1,3 @@
 ## Specificity about this infrastructure;
-A new HAProxy has been introduced to eliminate single points of failure (SPOF). Each server is now dedicated to a specific functionality, such as web serving, application serving, or MySQL. This setup enables each function to access more resources (CPU, memory, etc.), thus enhancing high availability. In the event of a hardware failure on one 
+A new HAProxy has been introduced to eliminate the single point of failure (SPOF). Each server is now dedicated to a specific functionality, such as web serving, application serving, or MySQL. This setup enables each function to access more resources (CPU, memory, etc.), thus enhancing high availability. In the event of a hardware failure on one 
 server, only the functionality hosted on that server is affected. For instance, if the first application server experiences downtime, the other application server, as well as the two web servers and two MySQL servers, remain unaffected.
