@@ -10,7 +10,7 @@ HTTPS utilizes the SSL/TLS protocol to encrypt communications, preventing attack
 
 # What monitoring is used for
 
-Monitoring refers to the systematic and ongoing collection of information from projects and programs for several purposes: learning from experiences to enhance future practices, ensuring internal and external accountability of resources and outcomes, making informed decisions, and empowering beneficiaries. It begins in the planning stage and involves tracking progress against predefined benchmarks, assessing resource allocation and utilization, evaluating progress towards goals and objectives, and adhering to schedules.
+It's used to track the performance of the infrastructure and to monitor its availability. Additionally, it's utilized to ensure the security of the infrastructure. This monitoring process helps in identifying issues. It also aids in optimizing resource usage.
 
 # How the monitoring tool is collecting data
 
@@ -18,6 +18,8 @@ Data collection is about gathering information from diverse sources to assess pr
 
 # Explain what to do if you want to monitor your web server QPS
 
+
+Setting up a monitoring tool involves collecting and analyzing web server performance metrics to monitor the Query Per Second (QPS). This includes tracking request/response times and observing the number of queries processed per second. In the context of this infrastructure, an alternative method is to monitor it within Nginx logs, for instance.
 
 
 ##  Issues with this infrastructure;
@@ -28,11 +30,11 @@ SSL termination at the load balancer presents a security concern as it involves 
 
 # Why having only one MySQL server capable of accepting writes is an issue
 
-A single write server in MySQL creates a bottleneck, is a single point of failure, and hinders maintenance. Utilizing multiple write servers through replication methods like master-master or group replication addresses these concerns by providing better scaling, automatic failover, and ensuring data consistency.
+A single write server in MySQL creates a SPOF and hinders maintenance. Utilizing multiple write servers through replication methods like master-master or group replication addresses these concerns by providing better scaling, automatic failover, and ensuring data consistency.
 
 # Why having servers with all the same components (database, web server and application server) might be a problem
 
-Having servers with all the same components, including the database, web server, and application server, can present several challenges. Firstly, it can impact cache performance as both the web server/app code and SQL Server would compete for memory resources, potentially leading to degraded performance. Additionally, sharing server resources such as disk usage, memory, and CPU between the web site and database can result in slower operation compared to if they were separated. While hosting them on the same server may suffice for low-traffic sites, it's preferable to separate them to allow for independent scaling and optimize performance.
+Having servers with all the same components, including the database, web server, and application server. The absence of diversity or redundancy in servers with identical components poses a risk. While hosting them on the same server may suffice for low-traffic sites, it's preferable to separate them to allow for independent scaling and optimize performance.
 
 
 Sources;
