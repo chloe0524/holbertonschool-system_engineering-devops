@@ -2,28 +2,17 @@
 
 # For every additional element, why you are adding it
 
+By distributing incoming traffic across multiple application servers using a load balancer, you create a system with redundancy and ensure high availability. This means if one server experiences an issue, the load balancer  reroutes traffic to the remaining available and working servers.
+
 # What distribution algorithm your load balancer is configured with and how it works
+
+Resource-based (adaptive) load balancing dynamically distributes tasks to the least busy server, offering an intelligent alternative to the potentially inefficient, Round-Robin approach. 
+Round-robin load balancing doesn't account for server capabilities, leading to potentially uneven load distribution and inefficiencies, unlike resource-based methods that prioritize efficient allocation based on real-time server health.
 
 # Is your load-balancer enabling an Active-Active or Active-Passive setup, explain the difference between both
 
+Active-Active: in an Active-Active configuration, both web servers receive traffic and handle requests simultaneously, ensuring high availability. In contrast, an active-passive setup utilizes only one server at a time. If the active server fails, the passive server becomes active and takes over handling requests, maintaining continuity.
 
-Active-Active vs. Active-Passive High Availability Clusters:
-
-**Active-Active**
-
-+ Pros: High scalability, parallel processing, near zero downtime.
-+ Cons: Complex, high cost, requires robust data consistency.
-
-**Active-Passive**
-
-+ Pros: Simple, cost-effective, suitable for lower loads.
-+ Cons: Single point of failure (passive node), slower failover, downtime during failover.
-Choose:
-
-- Near zero downtime: Active-Active.
-- Cost-effective: Active-Passive.
-- High scalability: Active-Active.
-- Non-critical services: Active-Passive.
 
 # How a database Primary-Replica (Master-Slave) cluster works
 
@@ -42,12 +31,14 @@ Replica nodes maintain copies of the data from the primary node, providing redun
 
 # Where are SPOF
 
+The load-balancer becomes a SPOF
 
 # Security issues (no firewall, no HTTPS)
-
+Without a firewall, the infrastructure s at risk of being the victim of an attack.
 
 # No monitoring
 
+Blind spots are inevitable without monitoring, making it difficult to identify and address potential threats before they escalate into major problems.
 
 Sources;
 
