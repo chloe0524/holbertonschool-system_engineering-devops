@@ -10,16 +10,18 @@ Domain names are text-based labels that identify Internet resources. They are us
 The "www" in www.foobar.com typically corresponds to a 'A' DNS record-type. In DNS, an "A" record (Address Record) points a domain or subdomain to an IP address. It's one of the most common DNS records, and it's used to point a domain or subdomain to an IP address representing a server where the domain's website is hosted. 
 
 # What is the role of the web server
-A web server is a computer system that uses HTTP to respond to client requests over the internet. It stores, processes, and delivers web content to users.
+A web server is a computer system that uses HTTP or HTTPS to respond to client requests over the internet. It stores, processes, and delivers web content to users.
 
 # What is the role of the application server
-An application server enhances a web server's capabilities by handling dynamic content generation, application logic, and integration with other resources.
+An application server enhances a web server's capabilities by handling dynamic content generation, application logic, and integration with other resources. For example, by hosting Java, JavaScript, or others.
 
 # What is the role of the database
-A database is an organized collection of data managed by a database management system (DBMS). It structures data for efficient querying and processing with SQL.
+A database is an organized collection of data managed by a database management system (DBMS). A relational database structures data for efficient querying and processing with SQL.
+RDBMS: Relational Database Management System
 
 # What is the server using to communicate with the computer of the user requesting the website
-Web servers communicate with web browsers using HTTP (Hypertext Transfer Protocol). TCP (Transmission Control Protocol) manages the channels between the browser and server.
+Web servers communicate with web browsers using HTTP (Hypertext Transfer Protocol)and HTTPS (HyperText Transfer Protocol Secure). TCP (Transmission Control Protocol) manages the channels between the browser and server. Transport Layer Security (TLS) protocol adds a layer of security on top of the TCP/IP transport protocols.
+HTTPS uses TLS.
 
 # Infrastructure Issues
 
@@ -30,7 +32,8 @@ A SPOF is a component within a system that, if it fails, can render the entire s
 Planned downtime refers to scheduled periods during which production equipment is intentionally limited or halted for maintenance, repairs, upgrades, or testing. The website may experience temporary downtime when new code is deployed and the web server needs to be restarted.
 
 # Cannot scale if too much incoming traffic
-Scaling a website involves adding resources to handle increased traffic. Challenges include optimizing assets, managing dependencies, and ensuring efficient database and session handling.
+Scaling a website involves adding resources to handle increased traffic. Challenges include optimizing assets (with cost control), managing dependencies, and ensuring efficient database and session handling.
+
 Sources;
 
 - What is a server?
