@@ -14,12 +14,11 @@ It's used to track the performance of the infrastructure and to monitor its avai
 
 # How the monitoring tool is collecting data
 
-Data collection is about gathering information from diverse sources to assess project or program success. Methods include qualitative (e.g., surveys, interviews) and quantitative (e.g., surveys, questionnaires) approaches, facilitating measurement of progress and identification of improvement areas. It enables tracking progress and comparing results with goals.
+A client (also called an agent) is deployed on each server. It collects data from diverse sources (logs, DB, OS statistics, etc.) and sends them to the monitoring server through the network. In this example, the monitoring client and server are Sumo Logic. It enables tracking progress and comparing results with goals.
 
 # Explain what to do if you want to monitor your web server QPS
 
-
-Setting up a monitoring tool involves collecting and analyzing web server performance metrics to monitor the Query Per Second (QPS). This includes tracking request/response times and observing the number of queries processed per second. In the context of this infrastructure, an alternative method is to monitor it within Nginx logs, for instance.
+Setting up a monitoring tool involves collecting and analyzing web server performance metrics to monitor the Query Per Second (QPS). This includes tracking request/response times and observing the number of queries processed per second. In the context of this infrastructure, an alternative method is to monitor it within Nginx logs, for instance. In this architecture the NGinx logs are pushed to Sumo Logic but the Sumo Logic clients.
 
 
 ##  Issues with this infrastructure;
@@ -34,7 +33,7 @@ A single write server in MySQL creates a SPOF and hinders maintenance. Utilizing
 
 # Why having servers with all the same components (database, web server and application server) might be a problem
 
-Having servers with all the same components, including the database, web server, and application server. The absence of diversity or redundancy in servers with identical components poses a risk. While hosting them on the same server may suffice for low-traffic sites, it's preferable to separate them to allow for independent scaling and optimize performance.
+Having servers with all the same components, including the database, web server, and application server. The absence of diversity or redundancy in servers with identical components poses a risk. While hosting them on the same server may suffice for low-traffic sites, it's preferable to separate them to allow for independent scaling and optimize performance. If there are multiple servers, but each one has a Web Server, an App Server, and a DB server, the resources needed by each server are higher (CPU, memory). In case of an incident incident, the surviving server must be able to cope with potentially a double activity (if there are 2 servers).
 
 
 Sources;
