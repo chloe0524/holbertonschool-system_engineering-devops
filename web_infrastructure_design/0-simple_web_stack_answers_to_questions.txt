@@ -1,35 +1,35 @@
 # Infrastructure Specifics
 
-## Server
+# What is a server
 A server, which can be either a powerful computer hardware or software, provides functionality for other programs or devices, known as "clients". This includes serving static content like HTML pages, images, and stylesheets. It manages data, devices, and systems over a network. A server, like any computer, operates on an underlying operating system that manages its software and hardware resources.
 
-## Domain Name
+# What is the role of the domain name
 Domain names are text-based labels that identify Internet resources. They are used by the Domain Name System (DNS) to map to websites and other Internet Protocol (IP) resources.
 
-## DNS Record
+# What type of DNS record www is in www.foobar.com
 The "www" in www.foobar.com typically corresponds to a 'A' DNS record-type. In DNS, an "A" record (Address Record) points a domain or subdomain to an IP address. It's one of the most common DNS records, and it's used to point a domain or subdomain to an IP address representing a server where the domain's website is hosted. 
 
-## Web Server
+# What is the role of the web server
 A web server is a computer system that uses HTTP to respond to client requests over the internet. It stores, processes, and delivers web content to users.
 
-## Application Server
+# What is the role of the application server
 An application server enhances a web server's capabilities by handling dynamic content generation, application logic, and integration with other resources.
 
-## Database
+# What is the role of the database
 A database is an organized collection of data managed by a database management system (DBMS). It structures data for efficient querying and processing with SQL.
 
-## Communication Protocol
+# What is the server using to communicate with the computer of the user requesting the website
 Web servers communicate with web browsers using HTTP (Hypertext Transfer Protocol). TCP (Transmission Control Protocol) manages the channels between the browser and server.
 
 # Infrastructure Issues
 
-## Single Point of Failure (SPOF)
+# Single Point of Failure (SPOF)
 A SPOF is a component within a system that, if it fails, can render the entire system non-operational. In our current infrastructure, the server is a single point of failure because nothing is redundant.
 
-## Downtime for Maintenance
+# Downtime when maintenance needed (like deploying new code web server needs to be restarted)
 Planned downtime refers to scheduled periods during which production equipment is intentionally limited or halted for maintenance, repairs, upgrades, or testing. The website may experience temporary downtime when new code is deployed and the web server needs to be restarted.
 
-## Scalability Issues
+# Cannot scale if too much incoming traffic
 Scaling a website involves adding resources to handle increased traffic. Challenges include optimizing assets, managing dependencies, and ensuring efficient database and session handling.
 Sources;
 
