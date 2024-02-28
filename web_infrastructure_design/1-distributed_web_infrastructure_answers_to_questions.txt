@@ -34,11 +34,14 @@ Replica nodes maintain copies of the data from the primary node, providing redun
 The load-balancer becomes a SPOF
 
 # Security issues (no firewall, no HTTPS)
-Without a firewall, the infrastructure s at risk of being the victim of an attack.
+Without a firewall, the infrastructure is at risk of being the victim of an attack. Without HTTPS, the client cannot ensure that the server is trustworthy as it has not been certified by a CA (certification authority); (source: https://www.ssl.com/article/what-is-a-certificate-authority-ca/).
+A certificate authority is a company or organization that acts to validate the identities of entities (such as websites, email addresses, companies, or individual persons) and bind them to cryptographic keys through the issuance of electronic documents known as digital certificates.
+Without HTTPS, the data on the network is not encrypted, which is a highly critical security risk.
+
 
 # No monitoring
 
-Blind spots are inevitable without monitoring, making it difficult to identify and address potential threats before they escalate into major problems.
+Blind spots are inevitable without monitoring, making it difficult to identify and address potential threats before they escalate into major problems. Monitoring enables companies to get a real-time (or near to real-time) view of how their servers behave, get alerts whenever a defined threshold value is exceeded, and sometimes store historical data (for example, to define trends or recheck past incidents).
 
 Sources;
 
